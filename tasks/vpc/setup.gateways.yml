@@ -11,7 +11,7 @@
 # create the NAT gateway, looking up the subnet ID by the human readable name: "private-a"
 - name: create NAT gateway
   ec2_vpc_nat_gateway:
-    subnet_id: "{{ vpc_subnet_ids['public-a'] }}"
+    subnet_id: "{{ vpc_subnet_ids['private-a'] }}"
     region: "{{ aws_region }}"
     wait: yes
     if_exist_do_not_create: true

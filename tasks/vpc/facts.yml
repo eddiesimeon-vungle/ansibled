@@ -55,5 +55,5 @@
 # parse the facts output and extract the NAT gateway IP
 - name: "set fact: VPC NAT gateway IP"
   set_fact:
-    vpc_nat_gateway_ip: "{{ vpc_nat_gateway_facts.result[0].nat_gateway_addresses.public_ip }}"
+    vpc_nat_gateway_ip: "{{ vpc_nat_gateway_facts.result[0].nat_gateway_addresses[0].public_ip }}"
   when: vpc_use_nat
