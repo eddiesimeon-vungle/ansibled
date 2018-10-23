@@ -9,5 +9,8 @@ vpc_dns_zone: ansibled
 vpc_use_nat: false
 
 # credentials for AWS (no, they aren't real...)
+aws_region: {{ lookup('env','AWS_REGION') }}
+aws_access_key: {{ lookup('env','AWS_ACCESS_KEY_ID') }}
+aws_secret_key: {{ lookup('env','AWS_SECRET_ACCESS_KEY') }}
 
 # Logentries REST API key -- read/write
