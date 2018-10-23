@@ -11,14 +11,14 @@
 # create the NAT gateway, looking up the subnet ID by the human readable name: "private-a"
 - name: create NAT gateway
   ec2_vpc_nat_gateway:
-    subnet_id: "{{ vpc_subnet_ids['private-a'] }}"
+    subnet_id: "{{ vpc_subnet_ids['public-a'] }}"
     region: "{{ aws_region }}"
     wait: yes
     if_exist_do_not_create: true
   register: create_nat_gateway
 
 # parse the outputs of the Ansible modules for some important details referred to when setting up routing
-- name: set facts Gateway IDs and IP
+- name: "set facts: Gateway IDs and IP"
   set_fact:
     vpc_gateway_id: "{{ create_gateway.gateway_id }}"
     vpc_nat_gateway_id: "{{ create_nat_gateway.nat_gateway_id }}"
