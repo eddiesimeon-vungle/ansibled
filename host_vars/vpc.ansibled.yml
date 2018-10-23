@@ -28,7 +28,6 @@ vpc_security_groups:
     rules:
       - proto: all
         group_name: vpc
-        ports: all
   - name: allow-public-ssh
     description: "Allow public SSH"
     rules:
